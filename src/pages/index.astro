@@ -1,50 +1,167 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+// Import any reusable components you already have.
+// Example: import Nav from '../components/Nav.astro';
+//          import Card from '../components/Card.astro';
 ---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Project – Home</title>
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+    <!-- Tailwind CSS (included via Astro’s default integration) -->
+    <link rel="stylesheet" href="/src/styles/tailwind.css" />
+  </head>
+
+  <body class="bg-gray-50 text-gray-900 antialiased">
+
+    <!-- ==== Top Navigation (sternsweaver.com style) ==== -->
+    <header class="border-b border-gray-200 bg-white sticky top-0 z-10">
+      <nav class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+        <a href="/" class="text-xl font-semibold">MyProject</a>
+        <ul class="flex space-x-6 text-sm font-medium">
+          <li><a href="#features" class="hover:text-primary">Features</a></li>
+          <li><a href="#about" class="hover:text-primary">About</a></li>
+          <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ==== Hero Section (WeControlTime.com style) ==== -->
+    <section class="relative overflow-hidden bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      <div class="max-w-4xl mx-auto text-center py-24 px-6">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          Build Beautiful, Fast Sites with Astro
+        </h1>
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+          Combine modern UI patterns, zero‑JS defaults, and powerful static rendering.
+        </p>
+        <a
+          href="#get-started"
+          class="inline-block bg-white text-indigo-700 font-semibold py-3 px-8 rounded-md shadow-lg hover:bg-gray-100 transition"
+        >
+          Get Started
+        </a>
+      </div>
+
+      <!-- Optional subtle background pattern (optional asset) -->
+      <svg
+        class="absolute inset-0 w-full h-full opacity-10"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice"
+        viewBox="0 0 1440 900"
+      >
+        <circle cx="720" cy="450" r="400" fill="white" />
+      </svg>
+    </section>
+
+    <!-- ==== Feature Cards Grid (klgates.com style) ==== -->
+    <section id="features" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">What You’ll Get</h2>
+
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Card #1 -->
+          <article class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-xl transition">
+            <h3 class="text-xl font-semibold mb-3">Zero‑Config Deploy</h3>
+            <p class="text-gray-600">
+              Deploy to Cloudflare Pages, Netlify, Vercel, or any static host with a single command.
+            </p>
+          </article>
+
+          <!-- Card #2 -->
+          <article class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-xl transition">
+            <h3 class="text-xl font-semibold mb-3">Component‑First Architecture</h3>
+            <p class="text-gray-600">
+              Write UI in React, Vue, Svelte, Solid, or plain HTML—Astro renders only what you need.
+            </p>
+          </article>
+
+          <!-- Card #3 -->
+          <article class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-xl transition">
+            <h3 class="text-xl font-semibold mb-3">Built‑in Image Optimisation</h3>
+            <p class="text-gray-600">
+              Automatic responsive images, lazy‑loading, and modern formats out of the box.
+            </p>
+          </article>
+
+          <!-- Add more cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==== About / CTA (optional) ==== -->
+    <section id="about" class="py-16 bg-indigo-50">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <h2 class="text-3xl font-bold mb-4">Why Astro?</h2>
+        <p class="text-lg text-gray-700 mb-8">
+          Astro lets you ship less JavaScript, improve Core Web Vitals, and stay focused on content.
+        </p>
+        <a
+          href="#get-started"
+          class="inline-block bg-indigo-600 text-white font-semibold py-3 px-8 rounded-md hover:bg-indigo-700 transition"
+        >
+          Learn More
+        </a>
+      </div>
+    </section>
+
+    <!-- ==== Footer (sternsweaver.com style) ==== -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+        <!-- Column 1: Brand + Social -->
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-4">MyProject</h3>
+          <p class="mb-4">
+            Building fast, privacy‑first web experiences.
+          </p>
+          <div class="flex space-x-4">
+            <!-- Replace with actual SVG icons or FontAwesome -->
+            <a href="#" aria-label="Twitter" class="hover:text-white">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.28 4.28 0 001.88-2.37 8.59 8.59 0 01-2.71 1.04 4.26 4.26 0 00-7.27 3.88A12.09 12.09 0 013 4.79a4.26 4.26 0 001.32 5.68 4.2 4.2 0 01-1.93-.53v.05a4.26 4.26 0 003.42 4.18c-.44.12-.9.15-1.38.06a4.27 4.27 0 003.98 2.96A8.55 8.55 0 012 19.54a12.07 12.07 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19-.01-.37-.02-.56A8.72 8.72 0 0024 5.57a8.48 8.48 0 01-2.54.7z"/></svg>
+            </a>
+            <a href="#" aria-label="GitHub" class="hover:text-white">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.07-.73.08-.71.08-.71 1.18.08 1.8 1.21 1.8 1.21 1.05 1.8 2.75 1.28 3.42.98.11-.76.41-1.28.74-1.57-2.55-.29-5.23-1.28-5.23-5.71 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.46.11-3.05 0 0 .98-.31 3.22 1.18a11.2 11.2 0 012.94-.39c.99.01 2 .13 2.94.39 2.24-1.49 3.22-1.18 3.22-1.18.63 1.59.23 2.76.11 3.05.75.81 1.2 1.84 1.2 3.1 0 4.44-2.69 5.42-5.25 5.71.42.36.8 1.07.8 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56A10.51 10.51 0 0023.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+            </a>
+            <!-- Add more icons as needed -->
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h4 class="font-semibold text-white mb-3">Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#features" class="hover:underline">Features</a></li>
+            <li><a href="#about" class="hover:underline">About</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
+            <li><a href="/privacy" class="hover:underline">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Newsletter Sign‑up (optional) -->
+        <div>
+          <h4 class="font-semibold text-white mb-3">Stay Updated</h4>
+          <form action="#" method="POST" class="flex flex-col space-y-3">
+            <input
+              type="email"
+              placeholder="you@example.com"
+              required
+              class="px-4 py-2 rounded bg-gray-800 border border-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            <button
+              type="submit"
+              class="bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} MyProject. All rights reserved.
+      </div>
+    </footer>
+  </body>
 </html>
